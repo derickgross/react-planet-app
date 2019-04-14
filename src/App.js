@@ -3,23 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentView: null // this will be a string
+    }
+  }
+
+  setCurrentView() {
+
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <nav>
+          <ul>
+            <li><button type="submit" onClick={this.setCurrentView}>Welcome</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>All Planets</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>See a Random Planet</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>Create a New Planet</button></li>
+          </ul>
+        </nav>
+        <h1>This is my Planet App!</h1>
       </div>
     );
   }
