@@ -24,7 +24,7 @@ POST /planets { name: <string>, num_moons: <number>, color: <strings> }
 
 The app will have a `Nav` component that is always rendered at the top of the page. 
 The navbar should include a button for each view. 
-The `onClick` handler for each button should call `setState` to change the `currentView` property in state. (Like the `setView` function we saw today in class in the `App.js` component).
+The `onClick` handler for each button should call `setState` to change the `currentView` property in state.
 
 ## Views:
 
