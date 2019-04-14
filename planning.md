@@ -90,7 +90,8 @@ We've determined that we will need at least Welcome, Index, and Random views mee
 
 Since the navigation functionality will be rendered for each view, it can exist as its own entity in the App.js file.  A simple implementation of the App component's (incomplete) render method could include hard-coded buttons for switching views, as follows:
 
-`render() {
+```
+render() {
 	return (
 	  <div className="App">
 	    <nav>
@@ -104,4 +105,5 @@ Since the navigation functionality will be rendered for each view, it can exist 
 	    <h1>This is my Planet App!</h1>
 	  </div>
 	);
-}`
+}
+```
