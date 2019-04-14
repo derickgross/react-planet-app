@@ -107,3 +107,57 @@ render() {
 	);
 }
 ```
+
+The specification indicates that each view should have a button to display it, which we have placed within list items in an unordered list in a nav element.  (Remember to use semantic HTML elements in place of divs as often as possible, though div is an acceptible choice for an element that simply enables the rendering of multiple sibling elements.)  Each button has an onClick handler that will execute a (yet unwritten) setCurrentView method.  Let's take a look at our in-progress App component:
+
+```
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentView: null // this will be a string
+    }
+  }
+
+  setCurrentView() {
+
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <nav>
+          <ul>
+            <li><button type="submit" onClick={this.setCurrentView}>Welcome</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>All Planets</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>See a Random Planet</button></li>
+            <li><button type="submit" onClick={this.setCurrentView}>Create a New Planet</button></li>
+          </ul>
+        </nav>
+        <h1>This is my Planet App!</h1>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+Along with the setCurrentView method, our App component includes a constructor that calls the constructor of our super class as well as establishes a currentView property in its state.  Now is as good a time as any to establish our view components.  We will create a components directory in the src directory, and add a component file inside a new namesake directory (that will eventually include a separate CSS file for the component).  Here's what our src directory looks like:
+
+```
+-src
+	-components
+		-CreatePlanetView
+			--CreatePlanetView.js
+		-IndexView
+			--IndexView.js
+		-RandomPlanetView
+			--RandomPlanetView.js
+		-WelcomeView
+			--WelcomeView.js
+```
