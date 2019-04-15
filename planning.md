@@ -161,3 +161,7 @@ Along with the setCurrentView method, our App component includes a constructor t
 		-WelcomeView
 			--WelcomeView.js
 ```
+
+For now, each of our views will simply render a distinct message within an h1 tag.  `setCurrentView` will use the distinct innerHTML of our view buttons to set `currentState`. When state changes, our App component will re-render as necessary.  We create a `displayCurrentView` method to house our switch statement, which returns JSX based on the value of `state.currentView`.  Rendering based on a specific condition (often maintained as a value in state, and possibly passed to a child component as props) is known as conditional rendering.
+
+To be continued- what would you do next??? :) 

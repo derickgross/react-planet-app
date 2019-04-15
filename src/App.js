@@ -2,16 +2,40 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import WelcomeView from "./components/WelcomeView/WelcomeView"
+import IndexView from "./components/IndexView/IndexView"
+import RandomPlanetView from "./components/RandomPlanetView/RandomPlanetView"
+import CreatePlanetView from "./components/CreatePlanetView/CreatePlanetView"
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentView: null // this will be a string
+      currentView: "Welcome" // this will be a string
     }
+
+    this.setCurrentView = this.setCurrentView.bind(this);
   }
 
-  setCurrentView() {
+  setCurrentView(event) {
+    this.setState({
+      currentView: event.target.innerHTML
+    })
+  }
 
+  displayCurrentView() {
+    switch (this.state.currentView) {
+      case "Welcome":
+        return <WelcomeView />
+      case "All Planets":
+        return <IndexView />
+      case "See a Random Planet":
+        return <RandomPlanetView />
+      case "Create a New Planet":
+        return <CreatePlanetView />
+      default:
+        return <WelcomeView />
+    }
   }
 
   render() {
@@ -25,7 +49,9 @@ class App extends Component {
             <li><button type="submit" onClick={this.setCurrentView}>Create a New Planet</button></li>
           </ul>
         </nav>
-        <h1>This is my Planet App!</h1>
+        {
+          this.displayCurrentView()
+        }
       </div>
     );
   }
